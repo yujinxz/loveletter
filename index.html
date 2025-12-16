@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You, My Lovelove 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+  text-align: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+.container {
+  max-width: 380px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Love letter */
+.letter {
+  background: rgba(255,255,255,0.2);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+/* Music button */
+button {
+  background: #ff4d6d;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+/* SLIDER FIXED */
+.slider-container {
+  width: 100%;
+  max-width: 320px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.slider {
+  display: flex;
+  animation: slide 12s infinite;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 20px;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Second message */
+.footer {
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  color: pink;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-800px); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>For You, My Lovelove 💖</h1>
+
+  <div class="letter">
+    My love, I’m sorry that after all these years we’ve been together,  
+    I never wrote you a proper love letter.  
+    So today, I want to make up for that.  
+    <br><br>
+    This is my digital love letter to you.  
+    I’m an IT student, and this is the best way I know how to express my love.  
+    Every line of code carries my feelings for you. 💕
+  </div>
+
+  <button onclick="playMusic()">Play Music 🎶</button>
+
+  <audio id="music" src="./song.mp3"></audio>
+
+  <!-- PHOTO SLIDER -->
+  <div class="slider-container">
+    <div class="slider">
+      <img src="./photo1.jpeg" class="love-photo">
+      <img src="./photo2.jpeg" class="love-photo">
+      <img src="./photo3.jpeg" class="love-photo">
+    </div>
+  </div>
+
+  <div class="footer">
+    No matter how far or how close we are,  
+    my heart always chooses you 💖  
+    <br><br>
+    Made by your handsome boyfriend  
+    <br>
+    Rashid Carlo Casas Rabillas 😘
+  </div>
+</div>
+
+<script>
+function playMusic() {
+  document.getElementById("music").play();
+}
+
+/* Floating hearts */
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "🌷🌷🌷🌷";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}, 500);
+</script>
+
+</body>
+</html>
